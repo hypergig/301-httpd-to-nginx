@@ -1,7 +1,11 @@
 ---
-# used to convert htaccess file into an Nginx config file
-python_builder:
-  image: python:2
+# python environment
+python_env:
+  build: .
+  links:
+    - httpd_proxy
+    - nginx_proxy
+    - httpd_webserver
 
 # apache proxy
 httpd_proxy:

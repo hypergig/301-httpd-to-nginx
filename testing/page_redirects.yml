@@ -1,0 +1,50 @@
+---
+page_redirects:
+  -
+    root: White
+    redirect: Yellow
+  -
+    root: Yellow
+    redirect: Fuchsia
+  -
+    root: Fuchsia
+    redirect: Red
+  -
+    root: Red
+    redirect: Silver
+  -
+    root: Silver
+    redirect: Gray
+  -
+    root: Gray
+    redirect: Olive
+  -
+    root: Olive
+    redirect: Purple
+  -
+    root: Purple
+    redirect: Maroon
+  -
+    root: Maroon
+    redirect: Aqua
+  -
+    root: Aqua
+    redirect: Lime
+  -
+    root: Lime
+    redirect: Teal
+  -
+    root: Teal
+    redirect: Green
+  -
+    root: Green
+    redirect: Blue
+  -
+    root: Blue
+    redirect: Navy
+  -
+    root: Navy
+    redirect: Black
+  -
+    root: Black
+    redirect: White
