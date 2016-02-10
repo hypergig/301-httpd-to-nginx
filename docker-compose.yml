@@ -9,7 +9,10 @@ python_env:
 
 # apache redir
 httpd_redir:
-  build: testing/httpd-redir/.
+  image: httpd:latest
+  volumes: 
+    - "$PWD/htaccess.txt:/usr/local/apache2/htdocs/.htaccess"
+    - "$PWD/testing/httpd.conf:/usr/local/apache2/conf/httpd.conf"
   ports:
     - "8080:80"
   links:
@@ -18,6 +21,8 @@ httpd_redir:
 # nginx redir
 nginx_redir:
   image: nginx:latest
+  # volumes: 
+  #   - "$PWD/nginx_conf/nginx.conf:/etc/nginx/nginx.conf"
   ports:
     - "8181:80"
   links:
