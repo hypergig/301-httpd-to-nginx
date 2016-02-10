@@ -1,37 +1,40 @@
 ---
-# python environment
-python_env:
-  build: .
-  links:
-    - httpd_redir
-    - nginx_redir
-    - httpd_webserver
+version: '2'
+services:
+  
+  # python environment
+  python_env:
+    build: testing/tester_environment/.
+    links:
+      - httpd_redir
+      - nginx_redir
+      - httpd_webserver
 
-# apache redir
-httpd_redir:
-  image: httpd:latest
-  volumes: 
-    - "$PWD/htaccess.txt:/usr/local/apache2/htdocs/.htaccess"
-    - "$PWD/testing/httpd.conf:/usr/local/apache2/conf/httpd.conf"
-  ports:
-    - "8080:80"
-  links:
-    - httpd_webserver
+  # static file webserver
+  httpd_webserver:
+    image: httpd:latest
+    volumes:
+      - "$PWD/testing/content:/usr/local/apache2/htdocs/"
+    ports:
+      - "80:80"
 
-# nginx redir
-nginx_redir:
-  image: nginx:latest
-  # volumes: 
-  #   - "$PWD/nginx_conf/nginx.conf:/etc/nginx/nginx.conf"
-  ports:
-    - "8181:80"
-  links:
-    - httpd_webserver
+  # apache redir
+  httpd_redir:
+    image: httpd:latest
+    volumes: 
+      - "$PWD/htaccess.txt:/usr/local/apache2/htdocs/.htaccess"
+      - "$PWD/testing/httpd.conf:/usr/local/apache2/conf/httpd.conf"
+    ports:
+      - "8080:80"
+    links:
+      - httpd_webserver
 
-# static file webserver
-httpd_webserver:
-  image: httpd:latest
-  volumes:
-    - "$PWD/testing/content:/usr/local/apache2/htdocs/"
-  ports:
-    - "80:80"
+  # nginx redir
+  nginx_redir:
+    image: nginx:latest
+    volumes: 
+      - "$PWD/nginx.conf:/etc/nginx/nginx.conf"
+    ports:
+      - "8181:80"
+    links:
+      - httpd_webserver

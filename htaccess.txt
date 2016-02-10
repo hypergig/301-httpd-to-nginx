@@ -1,4 +1,4 @@
-
+# hard-coded redirects 
 Redirect 301 /White.html http://httpd_webserver:80/Yellow.html
 Redirect 301 /Yellow.html http://httpd_webserver:80/Fuchsia.html
 Redirect 301 /Fuchsia.html http://httpd_webserver:80/Red.html

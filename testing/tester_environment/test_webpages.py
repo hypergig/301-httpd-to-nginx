@@ -32,5 +32,11 @@ class Test_webpages:
             content = 'Welcome to the %s page' % page['redirect']
             yield self.content_check, url, content
 
+    def test_nginx_redirects(self):
+        for page in self.page_redirects:
+            url = '%s/%s.html' % (self.nginx_redir, page['root'])
+            content = 'Welcome to the %s page' % page['redirect']
+            yield self.content_check, url, content
+
     def content_check(self, url, content):
         assert_not_equal(urllib2.urlopen(url).read().find(content), -1)
