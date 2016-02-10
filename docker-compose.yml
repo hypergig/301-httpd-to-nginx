@@ -3,20 +3,20 @@
 python_env:
   build: .
   links:
-    - httpd_proxy
-    - nginx_proxy
+    - httpd_redir
+    - nginx_redir
     - httpd_webserver
 
-# apache proxy
-httpd_proxy:
-  build: testing/httpd-proxy/.
+# apache redir
+httpd_redir:
+  build: testing/httpd-redir/.
   ports:
     - "8080:80"
   links:
     - httpd_webserver
 
-# nginx proxy
-nginx_proxy:
+# nginx redir
+nginx_redir:
   image: nginx:latest
   ports:
     - "8181:80"

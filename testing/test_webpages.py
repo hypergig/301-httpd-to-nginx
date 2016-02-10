@@ -6,8 +6,8 @@ import urllib2
 
 class Test_webpages:
     def __init__(self):
-        self.httpd_proxy = 'http://httpd_proxy:80'
-        self.nginx_proxy = 'http://nginx_proxy:80'
+        self.httpd_redir = 'http://httpd_redir:80'
+        self.nginx_redir = 'http://nginx_redir:80'
         self.httpd_webserver = 'http://httpd_webserver:80'
 
         self.script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -28,7 +28,7 @@ class Test_webpages:
 
     def test_httpd_redirects(self):
         for page in self.page_redirects:
-            url = '%s/%s.html' % (self.httpd_proxy, page['root'])
+            url = '%s/%s.html' % (self.httpd_redir, page['root'])
             content = 'Welcome to the %s page' % page['redirect']
             yield self.content_check, url, content
 

@@ -1,0 +1,17 @@
+
+Redirect 301 /White.html http://httpd_webserver:80/Yellow.html
+Redirect 301 /Yellow.html http://httpd_webserver:80/Fuchsia.html
+Redirect 301 /Fuchsia.html http://httpd_webserver:80/Red.html
+Redirect 301 /Red.html http://httpd_webserver:80/Silver.html
+Redirect 301 /Silver.html http://httpd_webserver:80/Gray.html
+Redirect 301 /Gray.html http://httpd_webserver:80/Olive.html
+Redirect 301 /Olive.html http://httpd_webserver:80/Purple.html
+Redirect 301 /Purple.html http://httpd_webserver:80/Maroon.html
+Redirect 301 /Maroon.html http://httpd_webserver:80/Aqua.html
+Redirect 301 /Aqua.html http://httpd_webserver:80/Lime.html
+Redirect 301 /Lime.html http://httpd_webserver:80/Teal.html
+Redirect 301 /Teal.html http://httpd_webserver:80/Green.html
+Redirect 301 /Green.html http://httpd_webserver:80/Blue.html
+Redirect 301 /Blue.html http://httpd_webserver:80/Navy.html
+Redirect 301 /Navy.html http://httpd_webserver:80/Black.html
+Redirect 301 /Black.html http://httpd_webserver:80/White.html
