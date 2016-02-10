@@ -1,0 +1,28 @@
+---
+# used to convert htaccess file into an Nginx config file
+python_builder:
+  image: python:2
+
+# apache proxy
+httpd_proxy:
+  build: testing/httpd-proxy/.
+  ports:
+    - "8080:80"
+  links:
+    - httpd_webserver
+
+# nginx proxy
+nginx_proxy:
+  image: nginx:latest
+  ports:
+    - "8181:80"
+  links:
+    - httpd_webserver
+
+# static file webserver
+httpd_webserver:
+  image: httpd:latest
+  volumes:
+    - "$PWD/testing/content:/usr/local/apache2/htdocs/"
+  ports:
+    - "80:80"
