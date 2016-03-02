@@ -7,7 +7,7 @@ An example of using docker to, execute a python script, build an integration env
 ```
 That is pretty much it
 
-## Requierments ##
+## Requirements ##
 * docker version 1.10.0
 * docker-compose version 1.6.0
 * docker-machine version 0.6.0 _for mac_
